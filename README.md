@@ -10,7 +10,7 @@
 ![alt tag](https://github.com/gezhixin/MoreThanDrawerMenumDemo/blob/master/ScreenShort/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-09-16%2016.27.30.png)
 
 抽屉式菜单的设计关键在于对UIViewController的chirldViewController特性的使用，以及SubView显示层级的使用，关键代码如下：
-```
+```swift
  var centerNavigationController : UINavigationController!
     {
         willSet(newCNVC){
@@ -34,7 +34,7 @@
 ```
 在点击左边菜单选项时，讲对应的UINavigationController对象赋值个rootViewController的centerNavigationController，上面的setter方法会将对应的VC和View添加到rootViewController中。
 
-```
+```swift
 var c = self.centerNavigationController.view.frame
 var duration   = NSTimeInterval((CenterViewOffset - c.origin.x) / CenterViewOffset * 0.45)
 c.origin.x = CenterViewOffset
