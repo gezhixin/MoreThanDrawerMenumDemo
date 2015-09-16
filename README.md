@@ -32,7 +32,7 @@
         }
     }
 ```
-在点击左边菜单选项时，讲对应的UINavigationController对象赋值个rootViewController的centerNavigationController，上面的setter方法会将对应的VC和View添加到rootViewController中。
+在点击左边菜单选项时，将对应的UINavigationController对象赋值个rootViewController的centerNavigationController，上面的setter方法会将对应的VC和View添加到rootViewController中。
 
 ```swift
 var c = self.centerNavigationController.view.frame
@@ -47,7 +47,7 @@ UIView.animateWithDuration(duration, delay:0, usingSpringWithDamping:0.9,
 ```
 上面代码是打开左边菜单的代码，只需要改变centerNavigationController.view.frame.x。
 
-**大概原理如此，其他如滑动手势、动画、View的缩放等等效果，你想怎么玩就怎么玩了。原理清楚了，其他的都是细节而已!**
+**大概原理如此，其他如滑动手势、动画、View的缩放等等效果，你想怎么玩就怎么玩了。原理清楚了，其他的都只是细节而已!**
 
 
 ## APP截图
@@ -57,4 +57,6 @@ UIView.animateWithDuration(duration, delay:0, usingSpringWithDamping:0.9,
 
 ![alt tag](https://github.com/gezhixin/MoreThanDrawerMenumDemo/blob/master/ScreenShort/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-09-16%2013.39.32.png) －－－－－－－－－－－－－－ ![alt tag](https://github.com/gezhixin/MoreThanDrawerMenumDemo/blob/master/ScreenShort/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-09-16%2013.40.12.png)
 
-## 说明
+## Licence
+
+MIT 
