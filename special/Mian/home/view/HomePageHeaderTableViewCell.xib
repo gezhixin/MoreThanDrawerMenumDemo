@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomePageHeaderTableViewCell" rowHeight="198" id="KGk-i7-Jjw" customClass="HomePageHeaderTableViewCell" customModule="special" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期六" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBx-1z-K4f">
+                        <rect key="frame" x="232" y="59" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="GWd-v9-Ybn"/>
+                            <constraint firstAttribute="height" constant="21" id="hOj-hP-Z6O"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年05月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg1-kN-oFa">
+                        <rect key="frame" x="232" y="147" width="77" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="L6V-vX-XaK"/>
+                            <constraint firstAttribute="width" constant="77" id="RTB-j0-vEG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O75-Nm-yGH">
+                        <rect key="frame" x="232" y="85" width="75" height="59"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="Dmd-k4-jzv"/>
+                            <constraint firstAttribute="height" constant="59" id="ysq-ux-bZT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="O75-Nm-yGH" firstAttribute="leading" secondItem="sg1-kN-oFa" secondAttribute="leading" id="JPC-b0-5rO"/>
+                    <constraint firstItem="sg1-kN-oFa" firstAttribute="top" secondItem="O75-Nm-yGH" secondAttribute="bottom" constant="3" id="PV4-PA-RWV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="sg1-kN-oFa" secondAttribute="bottom" constant="15" id="W09-mG-41W"/>
+                    <constraint firstItem="O75-Nm-yGH" firstAttribute="top" secondItem="OBx-1z-K4f" secondAttribute="bottom" constant="5" id="X4d-Ks-UOS"/>
+                    <constraint firstItem="O75-Nm-yGH" firstAttribute="leading" secondItem="OBx-1z-K4f" secondAttribute="leading" id="mlc-Fm-fgd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OBx-1z-K4f" secondAttribute="trailing" constant="5" id="ser-Cz-NHc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="dayLabel" destination="O75-Nm-yGH" id="54a-in-ZcF"/>
+                <outlet property="weakLabel" destination="OBx-1z-K4f" id="mlE-hh-msm"/>
+                <outlet property="yearAndMonLabel" destination="sg1-kN-oFa" id="BWR-Qf-MzG"/>
+            </connections>
+            <point key="canvasLocation" x="256" y="159"/>
+        </tableViewCell>
+    </objects>
+</document>
