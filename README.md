@@ -47,7 +47,7 @@ UIView.animateWithDuration(duration, delay:0, usingSpringWithDamping:0.9,
 ```
 上面代码是打开左边菜单的代码，只需要改变centerNavigationController.view.frame.x。
 
-** 大概原理如此，其他如滑动手势、动画、View的缩放等等效果，你想怎么玩就怎么玩了。原理清楚了，其他的都是细节而已！**
+**大概原理如此，其他如滑动手势、动画、View的缩放等等效果，你想怎么玩就怎么玩了。原理清楚了，其他的都是细节而已!**
 
 
 ## APP截图
