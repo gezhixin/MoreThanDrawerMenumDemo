@@ -8,3 +8,5 @@
 * iOS 7.0
 
 ## 截图
+
+![alt tag](https://github.com/gezhixin/MoreThanDrawerMenumDemo/blob/master/ScreenShort/IMG_0882.PNG)
