@@ -13,9 +13,9 @@ class WebClient: NSObject {
     
     
     class func Login(name string:String, passwd:String, sucess:(user: UserModel)->Void, failue:(code: Int, msg: String?)->Void) {
-        var param = ["u": string, "p": passwd]
+        let param = ["u": string, "p": passwd]
         STNet.postWithAction(Actions.loginAction, parameters: param, sucess: { (data) -> Void in
-            var user: UserModel = UserModel()
+            let user: UserModel = UserModel()
             user.name = data!["Name"].stringValue
             user.id = data!["Id"].int64Value
             user.ImgUrl = data!["ImgUrl"].string

@@ -16,7 +16,7 @@ class HomePageTableViewCell: UITableViewCell {
     @IBOutlet var cards: [UIView]!
     static func createView() -> HomePageTableViewCell
     {
-        var cell = NSBundle.mainBundle().loadNibNamed("HomePageTableViewCell", owner: nil, options: nil).first as! HomePageTableViewCell
+        let cell = NSBundle.mainBundle().loadNibNamed("HomePageTableViewCell", owner: nil, options: nil).first as! HomePageTableViewCell
         return cell
     }
     
@@ -36,7 +36,7 @@ class HomePageTableViewCell: UITableViewCell {
         for (var i = 0; i < 3; i++)
         {
             if (array.count > i) {
-                var model = array[i]
+                _ = array[i]
                 
             }
             else {
@@ -49,7 +49,7 @@ class HomePageTableViewCell: UITableViewCell {
     @IBAction func card1Clicked(sender: UIButton) {
         if (self.cardInfos != nil && self.cardInfos?.count >= 1)
         {
-            var model = self.cardInfos![0]
+            let model = self.cardInfos![0]
             if ((self.delegate != nil && delegate?.respondsToSelector("cardClicked:") != nil))
             {
                 self.delegate!.cardClicked!(model)
@@ -60,7 +60,7 @@ class HomePageTableViewCell: UITableViewCell {
     @IBAction func card2Clicked(sender: UIButton) {
         if (self.cardInfos != nil && self.cardInfos?.count >= 2)
         {
-            var model = self.cardInfos![0]
+            let model = self.cardInfos![0]
             if ((self.delegate != nil && delegate?.respondsToSelector("cardClicked:") != nil))
             {
                 self.delegate!.cardClicked!(model)
@@ -71,7 +71,7 @@ class HomePageTableViewCell: UITableViewCell {
     @IBAction func card3Clicked(sender: UIButton) {
         if (self.cardInfos != nil && self.cardInfos?.count >= 3)
         {
-            var model = self.cardInfos![0]
+            let model = self.cardInfos![0]
             if ((self.delegate != nil && delegate?.respondsToSelector("cardClicked:") != nil))
             {
                 self.delegate!.cardClicked!(model)

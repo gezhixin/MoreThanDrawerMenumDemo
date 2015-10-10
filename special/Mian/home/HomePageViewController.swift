@@ -47,7 +47,7 @@ class HomePageViewController: LeftRightMenuBaseViewController, UITableViewDelega
     //test codes
     func createModel() -> NewsModel
     {
-        var model = NewsModel()
+        let model = NewsModel()
         model.title = "人类第一次登月"
         model.content = "发生解决发生就放假啊斯洛伐克将离开房间的发空间 撒打发时间了打法就离开是对法律卡积分的发掘经济困境就看见阿斯科利发动机快乐阿萨德发"
         return model
@@ -56,7 +56,7 @@ class HomePageViewController: LeftRightMenuBaseViewController, UITableViewDelega
    
     func setSlarView()
     {
-        var solar = SolarViewController(nibName:"SolarViewController", bundle:nil)
+        let solar = SolarViewController(nibName:"SolarViewController", bundle:nil)
         solar.view.frame = CGRect(x: 0, y: 10, width: self.view.bounds.width, height: 300)
         self.view.addSubview(solar.view)
         self.addChildViewController(solar)
@@ -93,12 +93,12 @@ class HomePageViewController: LeftRightMenuBaseViewController, UITableViewDelega
     func getNews(index: Int) -> Array<NewsModel>
     {
         var newsArr = Array<NewsModel>()
-        var end = index * 3 + 3;
+        let end = index * 3 + 3;
         for ( var i = index * 3; i < end; i++)
         {
             if (self.news?.count > i)
             {
-                var model = self.news![i]
+                let model = self.news![i]
                 newsArr.append(model)
             }
         }
@@ -107,7 +107,7 @@ class HomePageViewController: LeftRightMenuBaseViewController, UITableViewDelega
     
     //MARK: - HomePageCardViewDelegate
     func cardClicked(news: NewsModel) {
-        var vc = DetailViewController(nibName:"DetailViewController", bundle:nil)
+        let vc = DetailViewController(nibName:"DetailViewController", bundle:nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

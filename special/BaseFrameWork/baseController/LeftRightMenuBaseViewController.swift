@@ -15,10 +15,10 @@ class LeftRightMenuBaseViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         rootViewController = appDelegate.rootLRMViewController
         
-        var edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: "edgePan:")
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: "edgePan:")
         edgePan.edges = .Left
         self.view.addGestureRecognizer(edgePan)
     }
@@ -32,8 +32,8 @@ class LeftRightMenuBaseViewController: BaseViewController {
     override func setLefBar()
     {
         weak var weakSelf: BaseViewController? = self
-        var leftBarItem: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-        var menumIcon: UIImageView = UIImageView(image: UIImage(named: "icon_menu.png"))
+        let leftBarItem: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
+        let menumIcon: UIImageView = UIImageView(image: UIImage(named: "icon_menu.png"))
         leftBarItem.addSubview(menumIcon)
         menumIcon.snp_makeConstraints { (make) -> Void in
             make.centerY.equalTo(leftBarItem)
@@ -52,7 +52,7 @@ class LeftRightMenuBaseViewController: BaseViewController {
     
     func edgePan(gesture:UIScreenEdgePanGestureRecognizer)
     {
-        var point = gesture.translationInView(self.view)
+        let point = gesture.translationInView(self.view)
         
         self.rootViewController.setCenterViewOffset(point.x)
         if gesture.state == .Ended

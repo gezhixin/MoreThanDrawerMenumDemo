@@ -45,7 +45,7 @@ class SolarViewController: GLKViewController {
         super.viewDidLoad()
 
         self.context = EAGLContext(API: EAGLRenderingAPI.OpenGLES1)
-        var view = self.view as! GLKView
+        let view = self.view as! GLKView
         view.context = self.context
         view.drawableDepthFormat = GLKViewDrawableDepthFormat.Format24
         view.delegate = self
@@ -112,9 +112,9 @@ class SolarViewController: GLKViewController {
     func setupOrthographicView(size:CGSize) {
     
         glViewport(0, 0, GLsizei(size.width), GLsizei(size.height))
-        var Min = min(size.width, size.height)
-        var width = whScale * size.width / Min
-        var height = whScale * size.height / Min
+        let Min = min(size.width, size.height)
+        let width = whScale * size.width / Min
+        let height = whScale * size.height / Min
         
         glMatrixMode(GLenum(GL_PROJECTION))
         glLoadIdentity()
@@ -144,7 +144,7 @@ class SolarViewController: GLKViewController {
         _moveDist[5].y +=  CGFloat( self.timeSinceLastUpdate * 25 * (1/1.881) )
     }
     
-    override func glkView(view: GLKView!, drawInRect rect: CGRect) {
+    override func glkView(view: GLKView, drawInRect rect: CGRect) {
     
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
         

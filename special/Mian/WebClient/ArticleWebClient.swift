@@ -12,9 +12,9 @@ class ArticleWebClient: NSObject {
    
     class func index() {
         STNet.postWithAction(Actions.articleIndex, parameters: nil, sucess: { (data) -> Void in
-           println(data!)
+           print(data!)
         }) { (code, msg) -> Void in
-            println(msg!)
+            print(msg!)
         }
     }
 }

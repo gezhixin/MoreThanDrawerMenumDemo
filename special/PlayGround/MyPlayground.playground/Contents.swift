@@ -7,7 +7,7 @@ str = "dasfasf"
 
 for (var i = 0; i < 9; i++)
 {
-    println("\(i)")
+    print("\(i)")
 }
 
 var img = UIImage(named: "icon_menu.png")

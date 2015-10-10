@@ -24,7 +24,7 @@ class LeftMenuViewController: LeftRightMenuBaseViewController, UITableViewDataSo
         super.viewDidLoad()
         self.navigationView.hidden = true
         self.navigationController!.navigationBar.hidden = true
-        var headerView = LeftMenuHeaderTableViewCell.createView()
+        let headerView = LeftMenuHeaderTableViewCell.createView()
         headerView.delegate = self
         self.headerView = headerView
         self.tableView.tableHeaderView = headerView
@@ -42,10 +42,10 @@ class LeftMenuViewController: LeftRightMenuBaseViewController, UITableViewDataSo
     //MARK:-
     //MARK:leftMenuHeaderViewDelegate
     func leftMenuHeaderView(view: LeftMenuHeaderTableViewCell, loginBtnCliked: UIButton) {
-        var vc = LoginViewController(nibName: "LoginViewController", bundle: nil) { (user) -> Void in
+        let vc = LoginViewController(nibName: "LoginViewController", bundle: nil) { (user) -> Void in
             
             view.updateViewWithUser(user)
-            println("login success")
+            print("login success")
         }
         self.presentViewController(vc, animated: true) { () -> Void in }
     }

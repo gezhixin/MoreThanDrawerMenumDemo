@@ -19,17 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
-        var leftVC = LeftMenuViewController(nibName:"LeftMenuViewController", bundle:nil);
-        var homeVC = HomePageViewController(nibName:"HomePageViewController", bundle:nil);
-        var homeNVC = UINavigationController(rootViewController: homeVC)
-        var leftNVC = UINavigationController(rootViewController: leftVC)
+        let leftVC = LeftMenuViewController(nibName:"LeftMenuViewController", bundle:nil);
+        let homeVC = HomePageViewController(nibName:"HomePageViewController", bundle:nil);
+        let homeNVC = UINavigationController(rootViewController: homeVC)
+        let leftNVC = UINavigationController(rootViewController: leftVC)
         
-        var importentVC = MySpecialDayViewController(nibName:"MySpecialDayViewController", bundle:nil)
-        var importentNVC = UINavigationController(rootViewController: importentVC)
+        let importentVC = MySpecialDayViewController(nibName:"MySpecialDayViewController", bundle:nil)
+        let importentNVC = UINavigationController(rootViewController: importentVC)
         importentNVC.view.x = CenterViewOffset
         
-        var favouriteVC = FavouriteViewController(nibName:"FavouriteViewController", bundle:nil)
-        var favouriteNCV = UINavigationController(rootViewController: favouriteVC)
+        let favouriteVC = FavouriteViewController(nibName:"FavouriteViewController", bundle:nil)
+        let favouriteNCV = UINavigationController(rootViewController: favouriteVC)
         favouriteNCV.view.x = CenterViewOffset
         
         leftVC.homePageViewContoller = homeNVC
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setViewBoundary(favouriteNCV)
         self.setViewBoundary(importentNVC)
         
-        var rootVC = LeftRightMenuRootViewController()
+        let rootVC = LeftRightMenuRootViewController()
         rootVC.leftNavigationController = leftNVC
         rootVC.centerNavigationController = homeNVC
         rootLRMViewController = rootVC
@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nvc.view.layer.shadowRadius = 7.0;
         nvc.view.layer.shadowColor = UIColor.blackColor().CGColor
         
-        var shadowPath = UIBezierPath(rect:nvc.view.bounds)
+        let shadowPath = UIBezierPath(rect:nvc.view.bounds)
         nvc.view.layer.shadowPath = shadowPath.CGPath;
     }
 

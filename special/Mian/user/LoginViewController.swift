@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     }
     
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -52,17 +52,17 @@ class LoginViewController: UIViewController {
         self.loginRequest();
     }
     func loginRequest() {
-        let name: String = self.user.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        let password = self.password.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let name: String = self.user.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let password = self.password.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         WebClient.Login(name: name, passwd: password, sucess: { (user) -> Void in
-            println(user)
+            print(user)
             if self.loginSuccessBlock != nil {
                 self.view.endEditing(true)
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in })
                 self.loginSuccessBlock!(user: user)
             }
         }) { (code, msg) -> Void in
-            println("error ---> \(msg!)(\(code))")
+            print("error ---> \(msg!)(\(code))")
         }
     }
 }

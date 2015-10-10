@@ -18,7 +18,7 @@ class HomePageHeaderTableViewCell: UITableViewCell {
     
     static func createView() -> HomePageHeaderTableViewCell
     {
-       var cell = NSBundle.mainBundle().loadNibNamed("HomePageHeaderTableViewCell", owner: nil, options: nil).first as! HomePageHeaderTableViewCell
+       let cell = NSBundle.mainBundle().loadNibNamed("HomePageHeaderTableViewCell", owner: nil, options: nil).first as! HomePageHeaderTableViewCell
         return cell
     }
 
@@ -38,22 +38,22 @@ class HomePageHeaderTableViewCell: UITableViewCell {
     func setDate()
     {
         var arrWeak = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
-        var date = NSDate()
-        var calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-        var timeZone = NSTimeZone(name: "Asia/Shanghai")
-        var unitFlags = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitWeekday
+        let date = NSDate()
+        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let timeZone = NSTimeZone(name: "Asia/Shanghai")
+        let unitFlags: NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Weekday]
 
         calendar?.timeZone = timeZone!
         
-        var comps = calendar?.components(unitFlags, fromDate: date)
-        var week = comps?.weekday
-        var year = comps?.year
-        var mon = comps?.month
-        var day = comps?.day
+        let comps = calendar?.components(unitFlags, fromDate: date)
+        let week = comps?.weekday
+        let year = comps?.year
+        let mon = comps?.month
+        let day = comps?.day
         
-        var strWeak = arrWeak[week! - 1]
-        var strDay = day < 10 ? "0\(day!)" : "\(day!)"
-        var strYearAndMon = "\(year!)年\(mon!)月"
+        let strWeak = arrWeak[week! - 1]
+        let strDay = day < 10 ? "0\(day!)" : "\(day!)"
+        let strYearAndMon = "\(year!)年\(mon!)月"
         self.weakLabel.text = strWeak
         self.dayLabel.text = strDay
         self.yearAndMonLabel.text = strYearAndMon

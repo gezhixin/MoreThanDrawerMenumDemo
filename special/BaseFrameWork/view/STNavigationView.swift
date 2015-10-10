@@ -22,7 +22,7 @@ class STNavigationView: UIView {
                 self.titleLabel = UILabel()
                 self.titleLabel!.font = UIFont.systemFontOfSize(16)
                 self.addSubview(self.titleLabel!)
-                self.titleLabel!.snp_makeConstraints({ (make) -> Void in
+                self.titleLabel!.snp_makeConstraints(closure: { (make) -> Void in
                     make.centerY.equalTo(self.leftBarItem)
                     make.centerX.equalTo(self)
                 })
@@ -42,7 +42,7 @@ class STNavigationView: UIView {
     
     //MARK:-初始化
      convenience init() {
-        var rect: CGRect = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: STNvaHeight)
+        let rect: CGRect = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: STNvaHeight)
         self.init(frame: rect);
     }
     
@@ -55,10 +55,10 @@ class STNavigationView: UIView {
     func setLeftItem(leftBarItem: UIView?, navigationTtemClicked: STNavigationItemClicked?) {
         if leftBarItem != nil {
             self.leftBarItem = leftBarItem
-            var btn: UIButton = UIButton()
+            let btn: UIButton = UIButton()
             self.leftBarItem.addSubview(btn)
             btn.snp_makeConstraints { (make) -> Void in
-                make.edges.equalTo(leftBarItem!).insets(UIEdgeInsetsMake(0, 0, 0, 0))
+                make.edges.equalTo(leftBarItem!).inset(UIEdgeInsetsMake(0, 0, 0, 0))
             }
             btn.addTarget(self, action: "onBarItemClicked", forControlEvents: UIControlEvents.TouchUpInside)
             
@@ -76,7 +76,7 @@ class STNavigationView: UIView {
         self.navigationTtemClicked = navigationTtemClicked
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

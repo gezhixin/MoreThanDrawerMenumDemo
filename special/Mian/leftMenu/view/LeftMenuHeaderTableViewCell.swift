@@ -16,7 +16,7 @@ class LeftMenuHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var headView: UIImageView!
     static func createView() -> LeftMenuHeaderTableViewCell
     {
-        var view = NSBundle.mainBundle().loadNibNamed("LeftMenuHeaderTableViewCell", owner: nil, options: nil).first as! LeftMenuHeaderTableViewCell
+        let view = NSBundle.mainBundle().loadNibNamed("LeftMenuHeaderTableViewCell", owner: nil, options: nil).first as! LeftMenuHeaderTableViewCell
         return view
     }
 

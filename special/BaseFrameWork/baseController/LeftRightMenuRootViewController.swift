@@ -83,7 +83,7 @@ class LeftRightMenuRootViewController: UIViewController, UIGestureRecognizerDele
         centerNavigationController.view.removeGestureRecognizer(pan)
         
         var c = self.centerNavigationController.view.frame
-        var duration  = NSTimeInterval(c.origin.x / CenterViewOffset * 0.45)
+        let duration  = NSTimeInterval(c.origin.x / CenterViewOffset * 0.45)
         
         c.origin.x = 0
         UIView.animateWithDuration(duration, delay:0, usingSpringWithDamping:1.0, initialSpringVelocity:1.0, options:UIViewAnimationOptions.AllowUserInteraction,animations:{
@@ -100,7 +100,7 @@ class LeftRightMenuRootViewController: UIViewController, UIGestureRecognizerDele
         centerNavigationController.view.addGestureRecognizer(pan)
         
         var c = self.centerNavigationController.view.frame
-        var duration   = NSTimeInterval((CenterViewOffset - c.origin.x) / CenterViewOffset * 0.45)
+        let duration   = NSTimeInterval((CenterViewOffset - c.origin.x) / CenterViewOffset * 0.45)
         
         c.origin.x = CenterViewOffset
         
@@ -141,7 +141,7 @@ class LeftRightMenuRootViewController: UIViewController, UIGestureRecognizerDele
     
     func pan(panGesture: UIPanGestureRecognizer)
     {
-        var point = panGesture.translationInView(centerNavigationController.view)
+        let point = panGesture.translationInView(centerNavigationController.view)
         setCenterViewOffset(currentCenterViewOffset4Pan + point.x)
         if pan.state == .Ended
         {

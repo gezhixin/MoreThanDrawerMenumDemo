@@ -38,7 +38,7 @@ extension UIView{
             return self.frame.size.width
         }
         set(newWidth) {
-            var point = self.frame.origin
+            let point = self.frame.origin
             var size = self.frame.size
             size.width = newWidth
             self.frame = CGRect(origin: point, size: size)
@@ -50,7 +50,7 @@ extension UIView{
             return self.frame.size.height
         }
         set(newHeight) {
-            var point = self.frame.origin
+            let point = self.frame.origin
             var size = self.frame.size
             size.height = newHeight
             self.frame = CGRect(origin: point, size: size)

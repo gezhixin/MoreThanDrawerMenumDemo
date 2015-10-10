@@ -17,7 +17,7 @@ class BaseViewController: UIViewController{
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -53,9 +53,8 @@ class BaseViewController: UIViewController{
 //设置Bar的 title 左右Btn
     func setLefBar()
     {
-        weak var weakSelf: BaseViewController? = self
-        var leftBarItem: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
-        var menumIcon: UIImageView = UIImageView(image: UIImage(named: "arrow_white_01.png"))
+        let leftBarItem: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
+        let menumIcon: UIImageView = UIImageView(image: UIImage(named: "arrow_white_01.png"))
         leftBarItem.addSubview(menumIcon)
         menumIcon.snp_makeConstraints { (make) -> Void in
             make.centerY.equalTo(leftBarItem)

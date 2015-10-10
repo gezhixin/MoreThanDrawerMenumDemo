@@ -13,35 +13,35 @@ import SwiftyJSON
 class STNet: NSObject {
 
     class func postWithAction(action: String, parameters: Dictionary<String, String>?, sucess:(data: JSON?)->Void, failure:(code:Int, msg: String?)->Void) -> Void {
-        var url = APP_API_URL + action
+        let url = APP_API_URL + action
         let parametersWithDefualt = self.addDefaultParameters(parameters)
-        Alamofire.request(.POST, url, parameters: parametersWithDefualt, encoding: .URL).responseJSON { (request, response, json, error) in
-            println("request URL : \(request.URLString)")
-            
-            //网络错误
-            if error != nil {
-                failure(code: error!.code, msg:"网络连接错误")
-                return
-            }
-            
-            var content = JSON(json!)
-            var myErrorCode: Int = content["errorCode"].intValue
-            
-            //自定义错误
-            if myErrorCode != 0 {
-                var myErrorMsg: String = content["errorMsg"].stringValue
-                failure(code: myErrorCode, msg: myErrorMsg)
-                return
-            }
-            
-            var data: JSON? = content["content"]
-            //网络请求成功
-            if data != nil {
-                sucess(data: data!)
+        Alamofire.request(.POST, url, parameters: parametersWithDefualt, encoding: .URL, headers: nil).responseJSON(completionHandler: { (request, response, result) -> Void in
+            print("request URL : \(request!.URLString)")
+           
+            if let value = result.value {
+                var content = JSON(value)
+                let myErrorCode: Int = content["errorCode"].intValue
+                
+                //自定义错误
+                if myErrorCode != 0 {
+                    let myErrorMsg: String = content["errorMsg"].stringValue
+                    failure(code: myErrorCode, msg: myErrorMsg)
+                    return
+                }
+                
+                let data: JSON? = content["content"]
+                //网络请求成功
+                if data != nil {
+                    sucess(data: data!)
+                } else {
+                    failure(code: -1, msg: "非标准格式数据")
+                }
+                
             } else {
-                failure(code: -1, msg: "非标准格式数据")
+                failure(code: -100, msg: "网络返回错误")
             }
-        }
+        })
+            
     }
 
     class func addDefaultParameters(Parameters: Dictionary<String, String>?) -> Dictionary<String, String>{

@@ -30,10 +30,10 @@ class DetailViewController: BaseViewController {
     
     func getArticle() {
         STNet.postWithAction(Actions.articleIndex, parameters: nil, sucess: { (data) -> Void in
-            var html: String = data!["articleList"][2]["Content"].string!
+            let html: String = data!["articleList"][2]["Content"].string!
             self.webView?.loadHTMLString(html, baseURL: nil)
         }) { (code, msg) -> Void in
-            println(msg!)
+            print(msg!)
         }
     }
 }
